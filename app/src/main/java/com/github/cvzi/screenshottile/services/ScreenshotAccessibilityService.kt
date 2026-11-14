@@ -316,7 +316,7 @@ class ScreenshotAccessibilityService : AccessibilityService() {
         val delayInMilliSeconds = if (delayInSeconds > 0) {
             1000L * delayInSeconds
         } else {
-            5L
+            250L
         }
         val buttonScreenshot = root.findViewById<ImageView>(R.id.buttonScreenshot)
         var countDownTextView: TextView? = null
@@ -325,7 +325,7 @@ class ScreenshotAccessibilityService : AccessibilityService() {
             root.postDelayed({
                 root.visibility = View.GONE
                 root.invalidate()
-            }, delayInMilliSeconds - 20L)
+            }, delayInMilliSeconds - 250L)
         } else {
             root.visibility = View.GONE
             root.invalidate()
