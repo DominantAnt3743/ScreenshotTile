@@ -316,7 +316,7 @@ class ScreenshotAccessibilityService : AccessibilityService() {
         val delayInMilliSeconds = if (delayInSeconds > 0) {
             1000L * delayInSeconds
         } else {
-            150L
+            200L
         }
         val buttonScreenshot = root.findViewById<ImageView>(R.id.buttonScreenshot)
         var countDownTextView: TextView? = null
@@ -325,7 +325,7 @@ class ScreenshotAccessibilityService : AccessibilityService() {
             root.postDelayed({
                 root.visibility = View.GONE
                 root.invalidate()
-            }, delayInMilliSeconds - 250L)
+            }, delayInMilliSeconds - 200L)
         } else {
             root.visibility = View.GONE
             root.invalidate()
@@ -344,7 +344,7 @@ class ScreenshotAccessibilityService : AccessibilityService() {
             } else if (!legacyMethod) {
                 Handler(Looper.getMainLooper()).postDelayed({
                     showTemporaryHiddenFloatingButton(root, countDownTextView, buttonScreenshot)
-                }, 0L)
+                }, 100L)
             }
         }, delayInMilliSeconds)
     }
