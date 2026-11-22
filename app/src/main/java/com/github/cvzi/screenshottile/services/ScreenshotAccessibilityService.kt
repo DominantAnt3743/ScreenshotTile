@@ -344,7 +344,7 @@ class ScreenshotAccessibilityService : AccessibilityService() {
             } else if (!legacyMethod) {
                 Handler(Looper.getMainLooper()).postDelayed({
                     showTemporaryHiddenFloatingButton(root, countDownTextView, buttonScreenshot)
-                }, 100L)
+                }, 150L)
             }
         }, delayInMilliSeconds)
     }
